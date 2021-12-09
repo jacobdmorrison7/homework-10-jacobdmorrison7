@@ -40,10 +40,10 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.light_LED)
         self.i = True
         
-	    # couldn't include because can't set an event and read
-	    # a pin that is set as a pin to write to 
-        #  GPIO.add_event_detect(pin, GPIO.RISING)
-        #  GPIO.add_event_callback(pin, self.my_callback)
+	    # couldn't include because can't set an event and READ
+	    # a pin that's an OUT pin
+        # GPIO.add_event_detect(pin, GPIO.RISING)
+        # GPIO.add_event_callback(pin, self.my_callback)
 
         
     def my_callback(self):
