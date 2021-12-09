@@ -1,15 +1,15 @@
 
 import sys
 import time
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 
 from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget)
 from PyQt5.QtCore import Qt 
 
-GPIO.setmode(GPIO.BCM)
+# GPIO.setmode(GPIO.BCM)
 
-pin = 18
-GPIO.setup(pin, GPIO.OUT)
+# pin = 18
+# GPIO.setup(pin, GPIO.OUT)
 
 
 class MainWindow(QMainWindow):
@@ -46,18 +46,19 @@ class MainWindow(QMainWindow):
         #  GPIO.add_event_callback(pin, self.my_callback)
 
         
-    def my_callback(self, channel):
+    def my_callback(self):
         self.indicator.setText('Is Connected')
     
     def light_LED(self):
         if self.i == True:
-            GPIO.output(pin,not GPIO.input(pin))
+            # GPIO.output(pin,not GPIO.input(pin))
             self.i = False
             self.my_callback()
             return
         elif self.i == False:
-            GPIO.output(pin, GPIO.LOW)
-            self.i == True
+            # GPIO.output(pin, GPIO.LOW)
+            self.i = True
+            self.indicator.setText(' Not Connected')
             return
 
         
