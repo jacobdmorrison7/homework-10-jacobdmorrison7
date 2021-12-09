@@ -40,8 +40,8 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.light_LED)
         self.i = True
         
-	# couldn't include because can't set an event and read
-	# a pin that is set as a pin to write to 
+	    # couldn't include because can't set an event and read
+	    # a pin that is set as a pin to write to 
         #  GPIO.add_event_detect(pin, GPIO.RISING)
         #  GPIO.add_event_callback(pin, self.my_callback)
 
@@ -50,12 +50,14 @@ class MainWindow(QMainWindow):
         self.indicator.setText('Is Connected')
     
     def light_LED(self):
-       #  if self.i == True:
-        GPIO.output(pin,not GPIO.INPUT(pin))
-       #     self.i = False
-       # else:
-       #     GPIO.output(pin, GPIO.LOW)
-       #     self.i == True
+        if self.i == True:
+            GPIO.output(pin,not GPIO.INPUT(pin))
+            self.i = False
+            return
+        elif self.i == False:
+            GPIO.output(pin, GPIO.LOW)
+            self.i == True
+            return
 
         
 if __name__ == '__main__':
