@@ -57,6 +57,7 @@ class MainWindow(QMainWindow):
             return
         elif self.i == False:
             GPIO.output(pin, GPIO.LOW)
+            self.indicator.setText(' Not Connected')
             self.i = True
             return
 
