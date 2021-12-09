@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         #  GPIO.add_event_callback(pin, self.my_callback)
 
         
-    def my_callback(self, channel):
+    def my_callback(self):
         self.indicator.setText('Is Connected')
     
     def light_LED(self):
@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
             return
         elif self.i == False:
             GPIO.output(pin, GPIO.LOW)
-            self.i == True
+            self.i = True
             return
 
         
