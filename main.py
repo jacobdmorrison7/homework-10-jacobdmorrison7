@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
     
     def light_LED(self):
         if self.i == True:
-            GPIO.output(pin,not GPIO.INPUT(pin))
+            GPIO.output(pin,not GPIO.input(pin))
             self.i = False
             return
         elif self.i == False:
