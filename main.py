@@ -17,8 +17,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
     
-        self.setFixedHeight(400)
-        self.setFixedWidth(400)
+        self.setFixedHeight(450)
+        self.setFixedWidth(715)
 
         info = QLabel("Press the button to light the LED\nThe text will change when the circuit is connected")
         # insert indicator and text
